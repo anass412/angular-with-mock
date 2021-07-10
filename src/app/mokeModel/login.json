@@ -1,0 +1,14 @@
+[{
+    "userName": "anas",
+    "password": "1234",
+    "successResponse": {
+        "success": true,
+        "msg_ar": "تمت العملية بنجاح",
+        "msg_en": "success"
+    },
+    "failedResponse": {
+        "success": false,
+        "msg_ar": "خطأ في اسم المستخدم او كلمة السر",
+        "msg_en": "failed"
+    }
+}]

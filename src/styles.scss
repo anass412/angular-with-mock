@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #ccc;
+    /* Override outline color. */
+}
+
+.mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: .65em 0;
+    /* Original top/bottom value was 1em. */
+}
+
+.mat-input-element {
+    position: relative;
+    top: -1.2em;
+    /* Adjust accordingly to keep placeholder/input text vertically centered. */
+}
+
+.mat-form-field-label-wrapper {
+    top: -1.7em;
+    /* Adjust accordingly to keep <mat-label> text vertically centered. */
+}
