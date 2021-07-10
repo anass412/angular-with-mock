@@ -12,12 +12,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { DialogComponent } from './dialog/dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DialogComponent
+    DialogComponent,
+    HomeComponent
   ],
   imports: [
     FormsModule,
@@ -33,7 +35,13 @@ import { MatDialogModule } from '@angular/material/dialog';
       path: "",
       redirectTo: "login",
       pathMatch: 'full'
-    }]),
+    },
+    {
+      path: "home",
+      component: HomeComponent,
+      data: {}
+    }
+    ]),
     FormsModule,
     HttpClientModule,
     NgHttpLoaderModule.forRoot(),

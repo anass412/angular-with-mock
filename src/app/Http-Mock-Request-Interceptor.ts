@@ -12,6 +12,10 @@ const urls = [
         url: `${environment.apiUrl}login`,
         json: login
     },
+    {
+        url: `${environment.apiUrl}logout`,
+        json: true
+    },
 ];
 @Injectable()
 export class HttpMockRequestInterceptor implements HttpInterceptor {
@@ -22,7 +26,7 @@ export class HttpMockRequestInterceptor implements HttpInterceptor {
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         for (const element of urls) {
-            if (request.url === element.url) {
+            if (request.url == element.url) {
                 if (element.url.indexOf('login') > -1) {
                     let response = element.json[0];
                     var obj = element.json.filter(obj => obj.userName == request.body.userName && obj.password == request.body.password);
@@ -31,6 +35,8 @@ export class HttpMockRequestInterceptor implements HttpInterceptor {
                     } else {
                         return of(new HttpResponse({ status: 403, body: response.failedResponse }));
                     }
+                } else if (element.url.indexOf('logout') > -1) {
+                    return of(new HttpResponse({ status: 200, body: element.json }));
                 }
                 let returnData = this.interceptorServiceService.giveRequestAndAuth(request);
                 if (returnData.handelAuth) {

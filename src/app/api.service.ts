@@ -12,4 +12,8 @@ export class ApiService {
     login(obj): Observable<any> {
         return this.http.post<any>(`${environment.apiUrl}login`, { ...obj })
     }
+
+    logout(): Observable<any> {
+        return this.http.post<any>(`${environment.apiUrl}logout` , {})
+    }
 }
