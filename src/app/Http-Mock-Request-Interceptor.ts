@@ -1,6 +1,5 @@
 import { Injectable, Injector } from '@angular/core';
 import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http';
-// import {  } from 'rxjs/Rx';
 import { environment } from 'src/environments/environment';
 import { InterceptorServiceService } from './interceptor-service.service';
 import { tap, catchError } from "rxjs/operators";
@@ -39,7 +38,7 @@ export class HttpMockRequestInterceptor implements HttpInterceptor {
                         tap(evt => { }),
                         catchError((err: any) => {
                             if (err instanceof HttpErrorResponse) {
-                                alert(err.error.msg_ar);
+                                alert(err.message);
                             }
                             return of(err);
                         }));
@@ -48,7 +47,7 @@ export class HttpMockRequestInterceptor implements HttpInterceptor {
                         tap(evt => { }),
                         catchError((err: any) => {
                             if (err instanceof HttpErrorResponse) {
-                                alert(err.error.msg_ar);
+                                alert(err.message);
                             }
                             return of(err);
                         }));
